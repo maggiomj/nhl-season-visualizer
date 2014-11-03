@@ -1,0 +1,38 @@
+text
+{
+	font-family: sans-serif;
+}
+
+g
+{
+	overflow: hidden;
+}
+
+.axis path,
+.axis line
+{
+  fill: 			none;
+  stroke:			black;
+  shape-rendering:	crispEdge;
+}
+
+.axis text
+{
+  font-size: 		10px;
+}
+
+.tick
+{
+  stroke-dasharray:	1, 2;
+}
+
+.node text
+{
+	display: 		none;
+	font-size: 		8px;
+}
+
+.node.selected-node text
+{
+	display: 		inline-block;
+}

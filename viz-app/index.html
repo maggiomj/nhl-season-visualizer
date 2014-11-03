@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="NHLDataVizApp">
+	<head>
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src='js/app.js'></script>
+		<script src='js/controllers.js'></script>
+		<script src='js/directives.js'></script>
+		<script src='js/services.js'></script>
+		
+		<link rel='stylesheet' type='text/css' href='assets/app.css'></link>
+	</head>
+
+	<body>
+		<div>NHL Season Visualizer</div>
+		<div class='graph-container'>
+			<div ng-controller='SeasonGraphControl'>
+				<div>
+					<select ng-model='seasonID' ng-options='y.value as y.label for y in years'>
+					</select>
+				</div>
+				<season-chart></season-chart>
+				<div class='spinner-container' ng-show='loading'>
+					<img class='spinner' src='assets/spinner.gif'></img>
+				</div>
+				<div class='error-container' ng-show='error'>
+					{{errorMessage}}
+				</div>
+			</div>
+		</div>
+	</body>
+</html> 
